@@ -31,7 +31,7 @@ function Entry() {
             <br />
             {moodRadioButton("Sad")}
             <br />
-            {moodRadioButton("Happy")}
+            {moodRadioButton("Excited")}
             <br />
             <button type='submit' onClick={submitHandler}></button>
         </form>
