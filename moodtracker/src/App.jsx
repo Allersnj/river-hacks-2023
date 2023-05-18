@@ -11,9 +11,6 @@ function App(props) {
   const entryList = entries.map((entry) => {
     return <Post />
   })
-function App() {
-  const [entries, setEntries] = useState([]);
-
 
   function callback(childData) {
     let temp = entries.map((x) => {x});
@@ -25,14 +22,12 @@ function App() {
     <>
       <div>
         <h1>MOOD TRACKER</h1>
-        <Entry />
         <br />
         {entryList}
         <Entry handleCallback={callback}/>
       </div>
     </>
   )
-}
 }
 
 export default App
