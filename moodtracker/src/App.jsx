@@ -5,13 +5,20 @@ import './App.css'
 import Entry from './components/Entry.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [entries, setEntries] = useState([]);
+
+
+  function callback(childData) {
+    let temp = entries.map((x) => {x});
+    temp.push(childData);
+    setEntries(temp);
+  }
 
   return (
     <>
       <div>
         <h1>MOOD TRACKER</h1>
-        <Entry />
+        <Entry handleCallback={callback}/>
       </div>
     </>
   )

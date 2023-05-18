@@ -9,13 +9,14 @@ function moodRadioButton(mood) {
   );
 }
 
-function Entry() {
+function Entry(props) {
 
   let submitHandler = (event) => {
-    console.log(event)
-    console.log(event.target.form[0].value)
-    console.log(event.target.form[1].checked)
-    event.preventDefault()
+    event.preventDefault();
+    let entry = {};
+    entry.journal = event.target.form[0].value;
+    entry.happy = event.target.form[1].checked;
+    props.handleCallback(entry);
   }
 
   return (
