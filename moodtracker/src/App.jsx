@@ -11,6 +11,15 @@ function App(props) {
   const entryList = entries.map((entry) => {
     return <Post />
   })
+function App() {
+  const [entries, setEntries] = useState([]);
+
+
+  function callback(childData) {
+    let temp = entries.map((x) => {x});
+    temp.push(childData);
+    setEntries(temp);
+  }
 
   return (
     <>
@@ -19,6 +28,7 @@ function App(props) {
         <Entry />
         <br />
         {entryList}
+        <Entry handleCallback={callback}/>
       </div>
     </>
   )
