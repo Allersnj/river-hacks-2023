@@ -10,10 +10,14 @@ function App() {
 
 
   function callback(childData) {
-    let temp = entries.map((x) => {x});
+    let temp = entries.map(x => x);
     temp.push(childData);
     setEntries(temp);
   }
+
+  const entryList = entries.map(el => {
+    return <Post entryData={el}/>
+  })
 
   return (
     <>
@@ -21,6 +25,8 @@ function App() {
         <h1>MOOD TRACKER</h1>
         <br />
         <Entry handleCallback={callback}/>
+        <br />
+        {entryList}
       </div>
     </>
   )
