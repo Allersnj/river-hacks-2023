@@ -1,5 +1,14 @@
 import { useState } from 'react'
 
+function moodRadioButton(mood) {
+  return (
+    <label htmlFor="">
+      {mood} 
+      <input type="radio" />
+    </label>
+  );
+}
+
 function Entry() {
 
   let submitHandler = (event) => {
@@ -18,20 +27,12 @@ function Entry() {
             <input type="text" name='journalEntry'/>
             </label>
             <br /> <br />
-            <label htmlFor="">
-                Happy 
-                <input type="radio" name='happy'/>
-            </label>
+            {moodRadioButton("Happy")}
             <br />
-            <label htmlFor="">
-                Sad
-                <input type="radio" />
-            </label>
+            {moodRadioButton("Sad")}
             <br />
-            <label htmlFor="">
-                Excited
-                <input type="radio" />
-            </label>
+            {moodRadioButton("Happy")}
+            <br />
             <button type='submit' onClick={submitHandler}></button>
         </form>
 
