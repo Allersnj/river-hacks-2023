@@ -32,7 +32,21 @@ function Entry(props) {
             <br />
             {moodRadioButton("Sad")}
             <br />
+            {moodRadioButton("Angry")}
+            <br />
+            {moodRadioButton("Sensitive")}
+            <br />
+            {moodRadioButton("Confident")}
+            <br />
             {moodRadioButton("Excited")}
+            <br />
+            {moodRadioButton("Anxious")}
+            <br />
+            {moodRadioButton("Insecure")}
+            <br />
+            {moodRadioButton("Grateful")}
+            <br />
+            {moodRadioButton("Indifferent")}
             <br />
             <button type='submit' onClick={submitHandler}></button>
         </form>
