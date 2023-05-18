@@ -10,9 +10,10 @@ function App() {
 
 
   function callback(childData) {
-    let temp = entries.map((x) => {x});
+    let temp = entries.map((x) => x);
     temp.push(childData);
     setEntries(temp);
+    console.log(entries);
   }
 
   return (

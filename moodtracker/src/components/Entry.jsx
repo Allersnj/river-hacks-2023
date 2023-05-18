@@ -1,21 +1,25 @@
 import { useState } from 'react'
 
-function moodRadioButton(mood) {
+function MoodRadioButton(props) {
   return (
     <label htmlFor="">
-      {mood} 
+      {props.mood} 
       <input type="radio" />
     </label>
   );
 }
 
 function Entry(props) {
+  let moods = ["Happy", "Sad", "Angry", "Sensitive", "Confident", "Excited", "Anxious", "Insecure", "Grateful", "Indifferent"];
 
   let submitHandler = (event) => {
     event.preventDefault();
     let entry = {};
     entry.journal = event.target.form[0].value;
-    entry.happy = event.target.form[1].checked;
+    for (let i = 0; i < moods.length; ++i) {
+      entry[moods[i]] = event.target.form[i+1].checked;
+    }
+    entry.key = new Date();
     props.handleCallback(entry);
   }
 
@@ -28,25 +32,12 @@ function Entry(props) {
             <input type="text" name='journalEntry'/>
             </label>
             <br /> <br />
-            {moodRadioButton("Happy")}
-            <br />
-            {moodRadioButton("Sad")}
-            <br />
-            {moodRadioButton("Angry")}
-            <br />
-            {moodRadioButton("Sensitive")}
-            <br />
-            {moodRadioButton("Confident")}
-            <br />
-            {moodRadioButton("Excited")}
-            <br />
-            {moodRadioButton("Anxious")}
-            <br />
-            {moodRadioButton("Insecure")}
-            <br />
-            {moodRadioButton("Grateful")}
-            <br />
-            {moodRadioButton("Indifferent")}
+            {moods.map((mood) => {return (
+              <>
+                <MoodRadioButton mood={mood}/>
+                <br />
+              </>
+            )})}
             <br />
             <button type='submit' onClick={submitHandler}>CLICK ON ME</button>
         </form>
