@@ -9,12 +9,14 @@ function moodRadioButton(mood) {
   );
 }
 
-function Entry() {
+function Entry(props) {
 
   let submitHandler = (event) => {
     console.log(event)
     console.log(event.target.form[0].value)
     console.log(event.target.form[1].checked)
+    console.log(event.target.form[2].checked)
+    console.log(event.target.form[3].checked)
     event.preventDefault()
   }
 
@@ -33,7 +35,7 @@ function Entry() {
             <br />
             {moodRadioButton("Happy")}
             <br />
-            <button type='submit' onClick={submitHandler}></button>
+            <button type='submit' onClick={submitHandler}>CLICK ON ME</button>
         </form>
 
       </div>
