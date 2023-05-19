@@ -27,8 +27,8 @@ function App() {
     console.log(entries);
   }
 
-  const entryList = entries.map(el => {
-    return <Post entryData={el} deleteHandler={delHandler}/>
+  const entryList = entries.map((el, index) => {
+    return <Post key={index} entryData={el} deleteHandler={delHandler}/>
   })
 
   return (
