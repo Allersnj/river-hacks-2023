@@ -7,6 +7,7 @@ function Post(props) {
         {props.entryData.moods}
         <br />
         {props.entryData.key.toString()}
+        <button onClick={() => props.deleteHandler(props.entryData.key)}>Delete</button>
       </div>
     </>
   )
