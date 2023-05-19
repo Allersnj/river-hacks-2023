@@ -14,6 +14,11 @@ function App() {
       event.preventDefault();
   }
 
+  const delHandler = (key) => {
+    let copy = [...entries]
+    let filteredEntries = copy.filter(el => el.key !== key)
+    setEntries(filteredEntries)
+  }
 
   function callback(childData) {
     let temp = entries.map(x => x);
@@ -23,7 +28,7 @@ function App() {
   }
 
   const entryList = entries.map(el => {
-    return <Post entryData={el}/>
+    return <Post entryData={el} deleteHandler={delHandler}/>
   })
 
   return (
