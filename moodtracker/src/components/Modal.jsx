@@ -12,7 +12,7 @@ function Modal(props) {
                     <h1>How did you feel today...</h1>
                 </div>
                 <div className="body">
-                  <Entry handleCallback={props.handleCallback}/>
+                  <Entry handleCallback={props.handleCallback} closeModal={props.closeModal}/>
 
                 </div>
                 <div className="footer">

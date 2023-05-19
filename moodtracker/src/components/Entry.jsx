@@ -26,6 +26,7 @@ function Entry(props) {
     }
     entry.key = new Date();
     props.handleCallback(entry);
+    props.closeModal(false);
   }
 
   return (
