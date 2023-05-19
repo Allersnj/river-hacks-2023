@@ -24,7 +24,11 @@ function Entry(props) {
         entry.moods.push(moods[i]);
       }
     }
-    entry.key = new Date();
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+    let date = new Date();
+    entry.key = `${days[date.getDay() - 1]} - ${months[date.getMonth()]} ${date.getDate()}`
     props.handleCallback(entry);
     props.closeModal(false);
   }
@@ -34,7 +38,6 @@ function Entry(props) {
       <div>
         <form action="">
             <label>
-                Journal Entry 
             <input type="text" name='journalEntry'/>
             </label>
             <br /> <br />
