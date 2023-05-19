@@ -44,7 +44,7 @@ function Entry(props) {
             )})}
             
             <br />
-            <button type='submit' onClick={submitHandler}>CLICK ON ME</button>
+            <button type='submit' onClick={submitHandler}>Submit</button>
         </form>
 
       </div>
