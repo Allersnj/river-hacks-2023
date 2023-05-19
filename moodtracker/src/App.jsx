@@ -4,9 +4,16 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Entry from './components/Entry.jsx'
 import Post from './components/Post.jsx'
+import Modal from './components/Modal.jsx'
 
 function App() {
   const [entries, setEntries] = useState([]);
+  const [openModal, setOpenModal] = useState(false)
+
+  const openHandler = () => {
+      setOpenModal(!openModal)
+      event.preventDefault();
+  }
 
 
   function callback(childData) {
@@ -24,8 +31,8 @@ function App() {
     <>
       <div>
         <h1>MOOD TRACKER</h1>
-        <br />
-        <Entry handleCallback={callback}/>
+        <button onClick={openHandler}>Add Entry</button>
+        {openModal && <Modal closeModal={setOpenModal} handleCallback={callback}/>}
         <br />
         {entryList}
       </div>
