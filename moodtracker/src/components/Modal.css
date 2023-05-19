@@ -45,6 +45,10 @@
     margin: 15px;
     text-align: center;
   }
+
+  #resources {
+    text-align: left;
+  }
   
   #cancelBtn {
     background-color: crimson;

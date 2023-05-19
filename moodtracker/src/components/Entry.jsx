@@ -30,6 +30,7 @@ function Entry(props) {
     let date = new Date();
     entry.key = date;
     entry.date = `${days[date.getDay() - 1]} - ${months[date.getMonth()]} ${date.getDate()}`
+    entry.day = days[date.getDay() - 1]
     props.handleCallback(entry);
     props.closeModal(false);
   }
