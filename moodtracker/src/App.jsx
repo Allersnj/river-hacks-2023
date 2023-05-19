@@ -89,14 +89,17 @@ function App() {
     let negativeCount = 0;
     if (entries.length > 5) {
       for (let i = entries.length - 1; i >= 0 && i > entries.length - 6; --i) {
-        for (let negative of negatives)
-        {
+        for (let negative of negatives) {
           if (entries[i].moods.includes(negative)) {
             ++negativeCount;
             console.log("negative");
             break;
           }
         }
+      }
+
+      if (negativeCount === 5) {
+        setOpenResourceModal(true);
       }
     }
   }
@@ -203,7 +206,7 @@ function App() {
       </div>
       <div>
         <h1>MOOD TRACKER</h1>
-      <div class= "entryButton">
+      <div className= "entryButton">
         <button onClick={openHandler}>+</button>
         </div>    
         {openModal && <Modal closeModal={setOpenModal} handleCallback={callback}/>}
