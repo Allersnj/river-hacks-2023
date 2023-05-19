@@ -2,7 +2,7 @@ function Post(props) {
   return (
     <>
       <div>
-        {props.entryData.key.toString()}
+        {props.entryData.date}
         <h3>{props.entryData.journal}</h3>
         {props.entryData.moods.join(', ')}
         <br />

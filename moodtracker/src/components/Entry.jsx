@@ -28,7 +28,8 @@ function Entry(props) {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
     let date = new Date();
-    entry.key = `${days[date.getDay() - 1]} - ${months[date.getMonth()]} ${date.getDate()}`
+    entry.key = date;
+    entry.date = `${days[date.getDay() - 1]} - ${months[date.getMonth()]} ${date.getDate()}`
     props.handleCallback(entry);
     props.closeModal(false);
   }
