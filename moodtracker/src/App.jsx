@@ -21,9 +21,9 @@ function App() {
   }
 
   function callback(childData) {
-    let temp = entries.map(x => x);
-    temp.push(childData);
-    setEntries(temp);
+    let copy = [...entries];
+    copy.push(childData);
+    setEntries(copy);
     console.log(entries);
   }
 
