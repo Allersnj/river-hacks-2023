@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #a2b3d8;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -61,8 +61,8 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #6289b3;
-    background-color: #ffffff;
+    color: #005e90;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), #cebdde);
   }
   a:hover {
     color: #d0444a;
@@ -70,4 +70,20 @@ button:focus-visible {
   button {
     background-color: #6289b3;
   }
+}
+
+.nav {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.nav a {
+  float: left;
+  color: inherit;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+  font-size: 17px;
 }
