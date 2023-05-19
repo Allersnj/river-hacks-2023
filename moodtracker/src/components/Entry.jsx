@@ -1,11 +1,13 @@
 import { useState } from 'react'
 
-function MoodRadioButton(props) {
+function MoodCheckbox(props) {
   return (
-    <label htmlFor="">
-      {props.mood} 
-      <input type="radio" />
-    </label>
+    <div>
+      <label htmlFor="">
+        {props.mood}
+      </label>
+      <input type="checkbox" />
+    </div>
   );
 }
 
@@ -35,12 +37,11 @@ function Entry(props) {
             <input type="text" name='journalEntry'/>
             </label>
             <br /> <br />
-            {moods.map((mood) => {return (
-              <>
-                <MoodRadioButton mood={mood}/>
-                <br />
-              </>
+            
+            {moods.map((mood, index) => {return (
+                <MoodCheckbox key={index} mood={mood}/>
             )})}
+            
             <br />
             <button type='submit' onClick={submitHandler}>CLICK ON ME</button>
         </form>
