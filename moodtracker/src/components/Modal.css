@@ -10,17 +10,10 @@
   }  */
   
   .modalContainer {
-    /* ===width: 500px;
-    height: 500px;
-    background-color: #bfcff066;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    display: flex;
-    flex-direction: column;
-    padding: 25px; */
+    background-color: #f8dcdcee;
+    background-image: linear-gradient( #cebdde, #e7dfef );
     border-radius: 25px;
     padding: 20px;
-   /*  width: 200px;
-    height: 150px; */
   } 
   
   .modalContainer .title {
@@ -49,25 +42,8 @@
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
+    margin: 15px;
     text-align: center;
-  }
-  
-  .modalContainer .footer {
-    flex: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modalContainer .footer button {
-    margin: 10px;
-    border: none;
-    background-color: #d0444a;
-    color: white;
-    border-radius: 25px;
-    font-size: 20px;
-    display: inline-block;
-    cursor: pointer;
   }
   
   #cancelBtn {

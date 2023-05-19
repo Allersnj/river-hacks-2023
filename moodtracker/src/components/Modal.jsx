@@ -15,10 +15,6 @@ function Modal(props) {
                   <Entry handleCallback={props.handleCallback} closeModal={props.closeModal}/>
 
                 </div>
-                <div className="footer">
-                    <button onClick={() => props.closeModal(false)}>Close</button>
-                </div>
-
             </div>
         </div>
 
