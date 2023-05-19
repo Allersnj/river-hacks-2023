@@ -33,20 +33,22 @@ function Entry(props) {
     <>
       <div>
         <form action="">
+          <div>
             <label>
-                Journal Entry 
-            <input type="text" name='journalEntry'/>
+              Journal Entry
             </label>
-            <br /> <br />
-            
-            {moods.map((mood, index) => {return (
-                <MoodCheckbox key={index} mood={mood}/>
-            )})}
-            
             <br />
-            <button type='submit' onClick={submitHandler}>Submit</button>
+            <input type="text" name='journalEntry'/>
+          </div>
+          <br />
+            
+          {moods.map((mood, index) => {return (
+              <MoodCheckbox key={index} mood={mood}/>
+          )})}
+            
+          <br />
+          <button type='submit' onClick={submitHandler}>Submit</button>
         </form>
-
       </div>
     </>
   )
