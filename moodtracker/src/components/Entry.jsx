@@ -33,11 +33,11 @@ function Entry(props) {
     <>
       <div>
         <form action="">
-            <label>
-                Journal Entry 
+{/*             <label>
+                Thoughts 
+            </label> <br /> */}
             <input type="text" name='journalEntry'/>
-            </label>
-            <br /> <br />
+            <br /> 
             
             {moods.map((mood, index) => {return (
                 <MoodCheckbox key={index} mood={mood}/>

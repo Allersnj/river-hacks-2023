@@ -34,13 +34,15 @@ function App() {
   return (
     <>
       <div class="nav">
-        <a class="active" href="#home">Home</a>
+        <a href="#home">Home</a>
         <a href="#data">Data</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
       </div>
       <div>
         <h1>MOOD TRACKER</h1>
-        <button onClick={openHandler}>Add Entry</button>
+      <div class= "entryButton">
+        <button onClick={openHandler}>+</button>
+        </div>    
         {openModal && <Modal closeModal={setOpenModal} handleCallback={callback}/>}
         <br />
         {entryList}

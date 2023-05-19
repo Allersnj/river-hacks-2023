@@ -9,7 +9,7 @@ function Modal(props) {
         <div className='modalBackground'>
             <div className='modalContainer'>
                 <div className="title">
-                    <h1>How did you feel today...</h1>
+                    <h1>How did you feel today?</h1>
                 </div>
                 <div className="body">
                   <Entry handleCallback={props.handleCallback} closeModal={props.closeModal}/>

@@ -27,13 +27,13 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  font-family: Mon;
+  font-family: "Lucida Console", monospace;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  font-family: Monaco;
+  font-family: "Monaco", monospace;
   color: #005e90;
   margin: 0;
 }
@@ -86,4 +86,18 @@ button:focus-visible {
   padding: 14px 14px;
   text-decoration: none;
   font-size: 17px;
+}
+
+.entryButton button {
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #d0444a;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
 }

@@ -10,20 +10,25 @@
   }  */
   
   .modalContainer {
-    /* width: 500px;
+    /* ===width: 500px;
     height: 500px;
-    border-radius: 12px; */
-    background-color: gray;
+    background-color: #bfcff066;
     /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     padding: 25px; */
+    border-radius: 25px;
+    padding: 20px;
+   /*  width: 200px;
+    height: 150px; */
   } 
   
   .modalContainer .title {
     display: inline-block;
     text-align: center;
     margin-top: 10px;
+    font-size: 7px;
+    font-family: "Lucida Console", monospace;
   }
   
   .titleCloseBtn {
@@ -43,7 +48,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.7rem;
+    font-size: 1.1rem;
     text-align: center;
   }
   
@@ -55,14 +60,13 @@
   }
   
   .modalContainer .footer button {
-    width: 150px;
-    height: 45px;
     margin: 10px;
     border: none;
-    background-color: cornflowerblue;
+    background-color: #d0444a;
     color: white;
-    border-radius: 8px;
+    border-radius: 25px;
     font-size: 20px;
+    display: inline-block;
     cursor: pointer;
   }
   
