@@ -41,7 +41,7 @@ function Entry(props) {
         <form action="">
             <label>
                 
-            <input type="text" name='journalEntry' placeholder='Write something'/>
+            <input type="text" name='journalEntry' placeholder='Describe your day...' size="50"/>
             </label>
             <br /> <br />
             

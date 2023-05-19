@@ -99,7 +99,7 @@ function App() {
         }
       }
     }
-
+  }
   const entryList = entries.map((el, index) => {
     return <Post key={index} entryData={el} deleteHandler={delHandler}/>
   })
@@ -198,7 +198,7 @@ function App() {
     <>
       <div className="nav">
         <a className="active" href="#home">Home</a>
-        <a href="#data">Data</a>
+        <a href="#analysis">Analysis</a>
         <a href="#about">About</a>
       </div>
       <div>
@@ -215,6 +215,6 @@ function App() {
       </div>
     </>
   )
-}}
+}
 
 export default App
