@@ -21,20 +21,20 @@ function App() {
   }
 
   function callback(childData) {
-    let temp = entries.map(x => x);
-    temp.push(childData);
-    setEntries(temp);
+    let copy = [...entries];
+    copy.push(childData);
+    setEntries(copy);
     console.log(entries);
   }
 
-  const entryList = entries.map(el => {
-    return <Post entryData={el} deleteHandler={delHandler}/>
+  const entryList = entries.map((el, index) => {
+    return <Post key={index} entryData={el} deleteHandler={delHandler}/>
   })
 
   return (
     <>
-      <div class="nav">
-        <a class="active" href="#home">Home</a>
+      <div className="nav">
+        <a className="active" href="#home">Home</a>
         <a href="#data">Data</a>
         <a href="#contact">Contact</a>
       </div>
