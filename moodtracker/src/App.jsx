@@ -4,14 +4,19 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Post from './components/Post.jsx'
 import Modal from './components/Modal.jsx'
+import ResourceModal from './components/ResourceModal.jsx'
 
 function App() {
   const [entries, setEntries] = useState([]);
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
+  const [openResourceModal, setOpenResourceModal] = useState(false);
 
   const openHandler = () => {
       setOpenModal(!openModal)
-      event.preventDefault();
+  }
+
+  const openResourceHandler = () => {
+    setOpenResourceModal(!openResourceModal);
   }
 
   const delHandler = (key) => {
@@ -24,12 +29,35 @@ function App() {
     let copy = [...entries];
     copy.push(childData);
     setEntries(copy);
+    checkRecentEntries();
     console.log(entries);
   }
 
   const entryList = entries.map((el, index) => {
     return <Post key={index} entryData={el} deleteHandler={delHandler}/>
   })
+
+  function checkRecentEntries() {
+    const negatives = ['Sad', 'Angry', 'Anxious', 'Insecure'];
+    let negativeCount = 0;
+    if (entries.length > 5) {
+      for (let i = entries.length - 1; i >= 0 && i > entries.length - 6; --i) {
+        for (let negative of negatives)
+        {
+          if (entries[i].moods.includes(negative)) {
+            ++negativeCount;
+            console.log("negative");
+            break;
+          }
+        }
+      }
+
+      console.log(negativeCount);
+      if (negativeCount == 5) {
+        setOpenResourceModal(true);
+      }
+    }
+  }
 
   return (
     <>
@@ -44,6 +72,7 @@ function App() {
         <button onClick={openHandler}>+</button>
         </div>    
         {openModal && <Modal closeModal={setOpenModal} handleCallback={callback}/>}
+        {openResourceModal && <ResourceModal closeModal={setOpenResourceModal} />}
         <br />
         {entryList}
       </div>
