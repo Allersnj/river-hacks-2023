@@ -4,9 +4,10 @@ function Post(props) {
     <>
       <div>
         <h3>{props.entryData.journal}</h3>
-        {props.entryData.moods}
+        {props.entryData.moods.join(', ')}
         <br />
         {props.entryData.key.toString()}
+        <br />
         <button onClick={() => props.deleteHandler(props.entryData.key)}>Delete</button>
       </div>
     </>
