@@ -36,7 +36,7 @@ function Entry(props) {
 
   return (
     <>
-      <div>
+      <div className="submit">
         <form action="">
             <label>
                 
