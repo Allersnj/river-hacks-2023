@@ -33,8 +33,8 @@ function App() {
 
   return (
     <>
-      <div class="nav">
-        <a class="active" href="#home">Home</a>
+      <div className="nav">
+        <a className="active" href="#home">Home</a>
         <a href="#data">Data</a>
         <a href="#contact">Contact</a>
       </div>
