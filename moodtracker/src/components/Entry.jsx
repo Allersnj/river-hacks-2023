@@ -1,21 +1,29 @@
 import { useState } from 'react'
 
-function moodRadioButton(mood) {
+function MoodRadioButton(props) {
   return (
     <label htmlFor="">
-      {mood} 
+      {props.mood} 
       <input type="radio" />
     </label>
   );
 }
 
-function Entry() {
+function Entry(props) {
+  let moods = ["Happy", "Sad", "Angry", "Sensitive", "Confident", "Excited", "Anxious", "Insecure", "Grateful", "Indifferent"];
 
   let submitHandler = (event) => {
-    console.log(event)
-    console.log(event.target.form[0].value)
-    console.log(event.target.form[1].checked)
-    event.preventDefault()
+    event.preventDefault();
+    let entry = {};
+    entry.journal = event.target.form[0].value;
+    entry.moods = [];
+    for (let i = 0; i < moods.length; ++i) {
+      if (event.target.form[i+1].checked) {
+        entry.moods.push(moods[i]);
+      }
+    }
+    entry.key = new Date();
+    props.handleCallback(entry);
   }
 
   return (
@@ -27,27 +35,14 @@ function Entry() {
             <input type="text" name='journalEntry'/>
             </label>
             <br /> <br />
-            {moodRadioButton("Happy")}
+            {moods.map((mood) => {return (
+              <>
+                <MoodRadioButton mood={mood}/>
+                <br />
+              </>
+            )})}
             <br />
-            {moodRadioButton("Sad")}
-            <br />
-            {moodRadioButton("Angry")}
-            <br />
-            {moodRadioButton("Sensitive")}
-            <br />
-            {moodRadioButton("Confident")}
-            <br />
-            {moodRadioButton("Excited")}
-            <br />
-            {moodRadioButton("Anxious")}
-            <br />
-            {moodRadioButton("Insecure")}
-            <br />
-            {moodRadioButton("Grateful")}
-            <br />
-            {moodRadioButton("Indifferent")}
-            <br />
-            <button type='submit' onClick={submitHandler}></button>
+            <button type='submit' onClick={submitHandler}>CLICK ON ME</button>
         </form>
 
       </div>
