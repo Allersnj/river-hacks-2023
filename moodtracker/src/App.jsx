@@ -98,7 +98,8 @@ function App() {
           }
         }
       }
-
+    }
+  }
   const entryList = entries.map((el, index) => {
     return <Post key={index} entryData={el} deleteHandler={delHandler}/>
   })
