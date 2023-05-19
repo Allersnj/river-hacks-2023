@@ -203,7 +203,7 @@ function App() {
       </div>
       <div>
         <h1>MOOD TRACKER</h1>
-      <div class= "entryButton">
+      <div className= "entryButton">
         <button onClick={openHandler}>+</button>
         </div>    
         {openModal && <Modal closeModal={setOpenModal} handleCallback={callback}/>}
