@@ -16,8 +16,11 @@ function Entry(props) {
     event.preventDefault();
     let entry = {};
     entry.journal = event.target.form[0].value;
+    entry.moods = [];
     for (let i = 0; i < moods.length; ++i) {
-      entry[moods[i]] = event.target.form[i+1].checked;
+      if (event.target.form[i+1].checked) {
+        entry.moods.push(moods[i]);
+      }
     }
     entry.key = new Date();
     props.handleCallback(entry);

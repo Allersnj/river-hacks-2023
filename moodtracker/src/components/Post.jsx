@@ -4,7 +4,7 @@ function Post(props) {
     <>
       <div>
         <h3>{props.entryData.journal}</h3>
-        {props.entryData.happy ? <p>happy</p> : <p>unhappy</p>}
+        {props.entryData.moods}
       </div>
     </>
   )
