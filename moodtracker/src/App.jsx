@@ -21,9 +21,9 @@ function App() {
   }
 
   function callback(childData) {
-    let temp = entries.map(x => x);
-    temp.push(childData);
-    setEntries(temp);
+    let copy = [...entries];
+    copy.push(childData);
+    setEntries(copy);
     console.log(entries);
   }
 
@@ -33,8 +33,8 @@ function App() {
 
   return (
     <>
-      <div class="nav">
-        <a href="#home">Home</a>
+      <div className="nav">
+        <a className="active" href="#home">Home</a>
         <a href="#data">Data</a>
         <a href="#about">About</a>
       </div>

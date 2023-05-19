@@ -24,7 +24,12 @@ function Entry(props) {
         entry.moods.push(moods[i]);
       }
     }
-    entry.key = new Date();
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+    let date = new Date();
+    entry.key = date;
+    entry.date = `${days[date.getDay() - 1]} - ${months[date.getMonth()]} ${date.getDate()}`
     props.handleCallback(entry);
     props.closeModal(false);
   }
@@ -33,20 +38,19 @@ function Entry(props) {
     <>
       <div>
         <form action="">
-{/*             <label>
-                Thoughts 
-            </label> <br /> */}
+            <label>
+                
             <input type="text" name='journalEntry'/>
-            <br /> 
+            </label>
+            <br /> <br />
             
-            {moods.map((mood, index) => {return (
-                <MoodCheckbox key={index} mood={mood}/>
-            )})}
+          {moods.map((mood, index) => {return (
+              <MoodCheckbox key={index} mood={mood}/>
+          )})}
             
-            <br />
-            <button type='submit' onClick={submitHandler}>CLICK ON ME</button>
+          <br />
+          <button type='submit' onClick={submitHandler}>Submit</button>
         </form>
-
       </div>
     </>
   )

@@ -1,12 +1,11 @@
-
 function Post(props) {
   return (
     <>
       <div>
+        {props.entryData.date}
         <h3>{props.entryData.journal}</h3>
-        {props.entryData.moods}
+        {props.entryData.moods.join(', ')}
         <br />
-        {props.entryData.key.toString()}
         <button onClick={() => props.deleteHandler(props.entryData.key)}>Delete</button>
       </div>
     </>
