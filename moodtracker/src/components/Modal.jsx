@@ -27,7 +27,6 @@ function Modal(props) {
                 <div className="body">
                     <form action="">
                         <label>
-                            Journal Entry 
                             <input type="text" name='journalEntry'/>
                         </label>
                     <br /> <br />
